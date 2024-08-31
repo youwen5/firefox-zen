@@ -411,11 +411,11 @@
     }
 
     set docShellIsActive(val) {
-      this.browsingContext.isActive = val;
+      this.browsingContext.isActive = val || this.zenModeActive;
       if (this.isRemoteBrowser) {
         let remoteTab = this.frameLoader?.remoteTab;
         if (remoteTab) {
-          remoteTab.renderLayers = val;
+          remoteTab.renderLayers = val || this.zenModeActive;
         }
       }
     }

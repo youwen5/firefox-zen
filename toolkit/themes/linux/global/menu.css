@@ -52,7 +52,7 @@ menulist > menupopup > :is(menuitem, menucaption, menu) {
 
 .menu-text {
   /* This is (18 + the size of end-padding on .menu-iconic-left)px */
-  margin-inline-start: 21px;
+  margin-inline-start: 0;
 }
 
 .menu-accel,

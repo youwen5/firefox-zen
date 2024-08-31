@@ -7,7 +7,7 @@ var { XPCOMUtils } = ChromeUtils.importESModule(
 );
 
 const POPUP_OPTIONS = {
-  position: "bottomleft topleft",
+  position: "topright topleft",
   x: 0,
   y: -2,
 };

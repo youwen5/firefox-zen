@@ -3214,6 +3214,11 @@
         ) {
           tabWasReused = true;
           tab = this.selectedTab;
+
+          if (tabData.zenWorkspace) {
+            tab.setAttribute("zen-workspace-id", tabData.zenWorkspace);
+          }
+
           if (!tabData.pinned) {
             this.unpinTab(tab);
           } else {
@@ -3262,6 +3267,10 @@
             skipLoad: true,
             preferredRemoteType,
           });
+
+          if (tabData.zenWorkspace) {
+            tab.setAttribute("zen-workspace-id", tabData.zenWorkspace);
+          }
 
           if (select) {
             tabToSelect = tab;
@@ -4150,6 +4159,7 @@
         isLastTab ||
         aTab.pinned ||
         aTab.hidden ||
+        true ||
         this._removingTabs.size >
           3 /* don't want lots of concurrent animations */ ||
         !aTab.hasAttribute(

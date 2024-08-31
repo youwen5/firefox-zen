@@ -138,6 +138,8 @@
   window.addEventListener("DOMContentLoaded",
     gBrowserInit.onDOMContentLoaded.bind(gBrowserInit), { once: true });
 </script>
+#include zen-locales.inc.xhtml
+#include zen-assets.inc.xhtml
 </head>
 <html:body xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 # All sets except for popupsets (commands, keys, and stringbundles)
@@ -159,9 +161,12 @@
     </vbox>
   </html:template>
 
-#include navigator-toolbox.inc.xhtml
-
-#include browser-box.inc.xhtml
+  <hbox id="zen-main-app-wrapper" flex="1">
+    #include navigator-toolbox.inc.xhtml
+    <html:span id="zen-sidebar-box-container">
+    </html:span>
+    #include browser-box.inc.xhtml    
+  </hbox>
 
   <html:template id="customizationPanel">
     <box id="customization-container" flex="1" hidden="true"><![CDATA[

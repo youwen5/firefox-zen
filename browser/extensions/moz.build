@@ -12,3 +12,5 @@ DIRS += [
     "pictureinpicture",
     "search-detection",
 ]
+
+DIRS += []

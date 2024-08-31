@@ -485,7 +485,8 @@ deck > *|*:not(:-moz-native-anonymous) {
 }
 
 tabpanels > .deck-selected,
-deck > .deck-selected {
+deck > .deck-selected,
+tabpanels > [zen-split="true"] {
   -moz-subtree-hidden-only-visually: 0;
   visibility: inherit;
 }

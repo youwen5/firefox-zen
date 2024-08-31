@@ -20,6 +20,7 @@ profiles-flush-restart-button = Restart { -brand-short-name }
 profiles-name = Profile: { $name }
 profiles-is-default = Default Profile
 profiles-rootdir = Root Directory
+profiles-avatar = Profile Avatar
 
 # localDir is used to show the directory corresponding to
 # the main profile directory that exists for the purpose of storing data on the

@@ -27,6 +27,7 @@ with Files("controlcenter/**"):
 
 
 DIRS += [
+    "zen-welcome",
     "about",
     "aboutlogins",
     "aboutwelcome",

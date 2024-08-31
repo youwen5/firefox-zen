@@ -243,6 +243,8 @@ var StarUI = {
       });
     }
 
+    this._setIconAndPreviewImage();
+
     let onPanelReady = fn => {
       let target = this.panel;
       if (target.parentNode) {
@@ -291,6 +293,21 @@ var StarUI = {
       let template = this._element("editBookmarkPanelTemplate");
       let clone = template.content.cloneNode(true);
       template.replaceWith(clone);
+    }
+  },
+
+  _setIconAndPreviewImage() {
+    let faviconImage = this._element("zenEditBookmarkPanelFavicon");
+    faviconImage.removeAttribute("iconloadingprincipal");
+    faviconImage.removeAttribute("src");
+
+    let tab = gBrowser.selectedTab;
+    if (tab.hasAttribute("image") && !tab.hasAttribute("busy")) {
+      faviconImage.setAttribute(
+        "iconloadingprincipal",
+        tab.getAttribute("iconloadingprincipal")
+      );
+      faviconImage.setAttribute("src", tab.getAttribute("image"));
     }
   },
 

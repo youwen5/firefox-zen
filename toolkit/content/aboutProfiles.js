@@ -117,7 +117,7 @@ function display(profileData) {
   let tbody = document.createElement("tbody");
   table.appendChild(tbody);
 
-  function createItem(title, value, dir = false) {
+  function createItem(title, value, dir = false, zenAsText = false) {
     let tr = document.createElement("tr");
     tbody.appendChild(tr);
 
@@ -143,6 +143,8 @@ function display(profileData) {
           value.reveal();
         });
       }
+    } else if (zenAsText) {
+      td.appendChild(document.createTextNode(value));
     } else {
       document.l10n.setAttributes(td, value);
     }
@@ -154,6 +156,8 @@ function display(profileData) {
   );
 
   createItem("profiles-rootdir", profileData.profile.rootDir, true);
+
+  createItem("profiles-avatar", profileData.profile.zenAvatarPath, false, true);
 
   if (profileData.profile.localDir.path != profileData.profile.rootDir.path) {
     createItem("profiles-localdir", profileData.profile.localDir, true);

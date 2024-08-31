@@ -237,6 +237,10 @@ var gBrowserInit = {
     gPrivateBrowsingUI.init();
     BrowserSearch.init();
     BrowserPageActions.init();
+
+    Services.scriptloader.loadSubScript("chrome://browser/content/ZenStartup.mjs", window);
+    Services.scriptloader.loadSubScript("chrome://browser/content/zenThemeModifier.js", window);
+
     if (gToolbarKeyNavEnabled) {
       ToolbarKeyboardNavigator.init();
     }

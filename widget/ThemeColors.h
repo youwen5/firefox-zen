@@ -13,8 +13,14 @@
 
 namespace mozilla::widget {
 
+#ifndef ZEN_DEFAULT_ACCENT_COLOR
+// Like a normal hex code:
+// 0xRRGGBBAA
+#define ZEN_DEFAULT_ACCENT_COLOR 0x000000df
+#endif
+
 static constexpr gfx::sRGBColor sDefaultAccent(
-    gfx::sRGBColor::UnusualFromARGB(0xff0060df));  // Luminance: 13.69346%
+    gfx::sRGBColor::UnusualFromARGB(ZEN_DEFAULT_ACCENT_COLOR));  // Luminance: 13.69346%
 static constexpr gfx::sRGBColor sDefaultAccentText(
     gfx::sRGBColor::OpaqueWhite());
 

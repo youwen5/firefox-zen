@@ -7624,7 +7624,12 @@ fn get_relative_scale_offset(
         CoordinateSpaceMapping::Local => ScaleOffset::identity(),
         CoordinateSpaceMapping::ScaleOffset(scale_offset) => scale_offset,
         CoordinateSpaceMapping::Transform(m) => {
-            ScaleOffset::from_transform(&m).expect("bug: pictures caches don't support complex transforms")
+            // Temporary fix when opening extensions (#34)
+            // TODO: Look more into this
+            ScaleOffset {
+                scale: Vector2D::new(m.m11, m.m22),
+                offset: Vector2D::new(m.m41, m.m42),
+            }
         }
     };
 

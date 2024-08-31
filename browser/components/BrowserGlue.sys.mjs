@@ -4728,6 +4728,7 @@ BrowserGlue.prototype = {
   },
 
   async _maybeShowDefaultBrowserPrompt() {
+    this._ZenMaybeShowWelcomeScreen();
     // Highest priority is about:welcome window modal experiment
     // Second highest priority is the upgrade dialog, which can include a "primary
     // browser" request and is limited in various ways, e.g., major upgrades.
@@ -5259,6 +5260,16 @@ BrowserGlue.prototype = {
     "nsIObserver",
     "nsISupportsWeakReference",
   ]),
+
+  _ZenMaybeShowWelcomeScreen() {
+    const welcomeEnabled = Services.prefs.getBoolPref("zen.welcomeScreen.enabled", true)
+    const welcomeSeen = Services.prefs.getBoolPref("zen.welcomeScreen.seen", false)
+    if (welcomeEnabled && !welcomeSeen) {
+      lazy.BrowserWindowTracker.getTopWindow().gDialogBox.open(
+        "chrome://browser/content/zen-welcome/welcome.html"
+      );
+    }
+  },
 };
 
 var ContentBlockingCategoriesPrefs = {

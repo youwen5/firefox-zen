@@ -354,7 +354,7 @@ CustomizeMode.prototype = {
       this._transitioning = true;
 
       let customizer = document.getElementById("customization-container");
-      let browser = document.getElementById("browser");
+      let browser = document.getElementById("tabbrowser-tabbox"); // ZEN: This fixes customizing mode!!! Dont remove it
       browser.hidden = true;
       customizer.hidden = false;
 
@@ -485,7 +485,7 @@ CustomizeMode.prototype = {
     }
 
     let customizer = document.getElementById("customization-container");
-    let browser = document.getElementById("browser");
+    let browser = document.getElementById("tabbrowser-tabbox"); // ZEN: This fixes customizing mode!!! Dont remove it
     customizer.hidden = true;
     browser.hidden = false;
 
@@ -2271,6 +2271,20 @@ CustomizeMode.prototype = {
         }
         if (makeSpaceImmediately) {
           aItem.setAttribute("notransition", "true");
+        }
+        if (aItem.parentElement.id === "TabsToolbar-customization-target")  {
+          // We change the border values so we can properly implement the native vertical tabs
+          // drag and drop behavior.
+          aItem.style.borderColor = "transparent";
+          if (aValue == "before") {
+            prop = "borderTopWidth";
+            otherProp = "borderBottomWidth";
+            aItem.style.borderTopStyle = "solid";
+          } else {
+            prop = "borderBottomWidth";
+            otherProp = "borderTopWidth";
+            aItem.style.borderBottomStyle = "solid";
+          }
         }
         aItem.style[prop] = borderWidth + "px";
         aItem.style.removeProperty(otherProp);

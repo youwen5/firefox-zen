@@ -98,6 +98,8 @@ var TabStateInternal = {
       tabData.muteReason = tab.muteReason;
     }
 
+    tabData.zenWorkspace = tab.getAttribute("zen-workspace-id");
+
     tabData.searchMode = tab.ownerGlobal.gURLBar.getSearchMode(browser, true);
 
     tabData.userContextId = tab.userContextId || 0;

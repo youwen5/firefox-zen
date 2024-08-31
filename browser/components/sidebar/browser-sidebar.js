@@ -446,7 +446,7 @@ var SidebarController = {
    */
   setPosition() {
     // First reset all ordinals to match DOM ordering.
-    let browser = document.getElementById("browser");
+    let browser = document.getElementById("zen-tabbox-wrapper");
     [...browser.children].forEach((node, i) => {
       node.style.order = i + 1;
     });
@@ -460,9 +460,11 @@ var SidebarController = {
       let boxOrdinal = this._box.style.order;
       this._box.style.order = appcontent.style.order;
 
-      appcontent.style.order = boxOrdinal;
+      // appcontent.style.order = boxOrdinal;
       // the launcher should be on the right of the sidebar-box
-      sidebarContainer.style.order = parseInt(this._box.style.order) + 1;
+      this._box.style.order = browser.children.length + 2;
+      this._splitter.style.order = browser.children.length + 1;
+      this._splitter.style.marginRight = 0;
       // Indicate we've switched ordering to the box
       this._box.setAttribute("positionend", true);
       sidebarMain.setAttribute("positionend", true);
@@ -471,6 +473,8 @@ var SidebarController = {
       this._box.removeAttribute("positionend");
       sidebarMain.removeAttribute("positionend");
       sidebarContainer.removeAttribute("positionend");
+      this._box.style.order = 0;
+      this._splitter.style.removeProperty("margin-right");
     }
 
     this.hideSwitcherPanel();

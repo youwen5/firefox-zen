@@ -377,17 +377,17 @@ bin/libfreebl_64int_3.so
 ; [MaintenanceService]
 ;
 #ifdef MOZ_MAINTENANCE_SERVICE
-@BINPATH@/maintenanceservice.exe
-@BINPATH@/maintenanceservice_installer.exe
+;@BINPATH@/maintenanceservice.exe
+;@BINPATH@/maintenanceservice_installer.exe
 #endif
 
 ; [Crash Reporter]
 ;
 #ifdef MOZ_CRASHREPORTER
 #ifdef XP_MACOSX
-@BINPATH@/crashreporter.app/
+;@BINPATH@/crashreporter.app/
 #else
-@BINPATH@/crashreporter@BIN_SUFFIX@
+;@BINPATH@/crashreporter@BIN_SUFFIX@
 #if defined(XP_WIN)
 @BINPATH@/@DLL_PREFIX@mozwer@DLL_SUFFIX@
 #endif
@@ -397,7 +397,7 @@ bin/libfreebl_64int_3.so
 ; [ minidump-analyzer ]
 ;
 #ifdef MOZ_CRASHREPORTER
-@BINPATH@/minidump-analyzer@BIN_SUFFIX@
+;@BINPATH@/minidump-analyzer@BIN_SUFFIX@
 #endif
 
 ; [ Ping Sender ]

@@ -14,12 +14,13 @@
 
 :host(:not([native])) {
   appearance: none;
-  background-color: var(--button-bgcolor, ButtonFace);
+  background-color: var(--zen-colors-tertiary, ButtonFace);
   color: var(--button-color, ButtonText);
   border-radius: 4px;
   padding-block: 4px;
   padding-inline: 12px 8px;
   margin: 5px 2px 3px;
+  border: 1px solid var(--input-border-color, ThreeDShadow);
 }
 
 :host(:not([native])[size="medium"]) {

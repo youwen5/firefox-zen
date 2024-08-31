@@ -145,7 +145,7 @@ export const PREFS_CONFIG = new Map([
     "showSponsoredTopSites",
     {
       title: "Show sponsored top sites",
-      value: true,
+      value: false,
     },
   ],
   [

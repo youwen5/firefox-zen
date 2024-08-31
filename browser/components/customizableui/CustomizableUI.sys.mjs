@@ -25,7 +25,7 @@ ChromeUtils.defineLazyGetter(lazy, "gWidgetsBundle", function () {
   return Services.strings.createBundle(kUrl);
 });
 
-const kDefaultThemeID = "default-theme@mozilla.org";
+const kDefaultThemeID = "firefox-compact-dark@mozilla.org";
 
 const kSpecialWidgetPfx = "customizableui-special-";
 
@@ -253,10 +253,9 @@ var CustomizableUIInternal = {
       "spring",
       "urlbar-container",
       "spring",
-      "save-to-pocket-button",
       "downloads-button",
       AppConstants.MOZ_DEV_EDITION ? "developer-button" : null,
-      "fxa-toolbar-menu-button",
+      "wrapper-sidebar-button",
       lazy.resetPBMToolbarButtonEnabled ? "reset-pbm-toolbar-button" : null,
     ].filter(name => name);
 
@@ -288,7 +287,7 @@ var CustomizableUIInternal = {
       {
         type: CustomizableUI.TYPE_TOOLBAR,
         defaultPlacements: [
-          "firefox-view-button",
+//          "firefox-view-button",
           "tabbrowser-tabs",
           "new-tab-button",
           "alltabs-button",

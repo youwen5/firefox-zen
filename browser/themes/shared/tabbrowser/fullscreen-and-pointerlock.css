@@ -7,7 +7,7 @@
 :root[inDOMFullscreen] #sidebar-box,
 :root[inDOMFullscreen] #sidebar-main,
 :root[inDOMFullscreen] #sidebar-splitter,
-:root[inFullscreen]:not([macOSNativeFullscreen]) toolbar:not([fullscreentoolbar=true]),
+:root[inFullscreen]:not([macOSNativeFullscreen]) toolbar:not([fullscreentoolbar=true]):not(.zen-dont-hide-on-fullscreen),
 :root[inFullscreen] .global-notificationbox {
   visibility: collapse;
 }

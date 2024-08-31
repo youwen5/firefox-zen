@@ -1153,6 +1153,13 @@ export class nsContextMenu {
         !this.isSecureAboutPage()
     );
 
+    this.showItem(
+      "context-zenAddToWebPanel",
+      this.onLink && !this.onMailtoLink && !this.onTelLink
+    );
+
+    this.showItem("context-zenSplitLink", this.onLink && !this.onMailtoLink && !this.onTelLink);
+
     let copyLinkSeparator = this.document.getElementById(
       "context-sep-copylink"
     );

@@ -74,7 +74,7 @@ class _BuiltInThemes {
   maybeInstallActiveBuiltInTheme() {
     const activeThemeID = Services.prefs.getStringPref(
       kActiveThemePref,
-      "default-theme@mozilla.org"
+      "firefox-compact-dark@mozilla.org"
     );
     let activeBuiltInTheme = this.builtInThemeMap.get(activeThemeID);
 
@@ -82,7 +82,7 @@ class _BuiltInThemes {
       lazy.AddonManager.maybeInstallBuiltinAddon(
         activeThemeID,
         activeBuiltInTheme.version,
-        `resource://builtin-themes/${activeBuiltInTheme.path}`
+        `${activeBuiltInTheme.path}`
       );
     }
   }
@@ -166,7 +166,7 @@ class _BuiltInThemes {
   async _uninstallExpiredThemes() {
     const activeThemeID = Services.prefs.getStringPref(
       kActiveThemePref,
-      "default-theme@mozilla.org"
+      "firefox-compact-dark@mozilla.org"
     );
     const now = new Date();
     const expiredThemes = Array.from(this.builtInThemeMap.entries()).filter(

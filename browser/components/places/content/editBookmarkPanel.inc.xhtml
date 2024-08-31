@@ -5,7 +5,7 @@
 <div id="editBookmarkPanelContent">
   <label id="editBMPanel_itemsCountText"
          class="editBMPanel_selectionCount"/>
-
+<hbox flex="1" class="zenEditBMPanel_fieldContainer">
   <label data-l10n-id="bookmark-overlay-name-2"
          class="editBMPanel_nameRow hideable"
          control="editBMPanel_namePicker"/>
@@ -13,7 +13,7 @@
               class="editBMPanel_nameRow hideable"
               type="text"
               onchange="gEditItemOverlay.onNamePickerChange().catch(Cu.reportError);"/>
-
+</hbox>
   <label data-l10n-id="bookmark-overlay-url"
          class="editBMPanel_locationRow hideable"
          control="editBMPanel_locationField"/>
@@ -21,7 +21,7 @@
               class="editBMPanel_locationRow uri-element hideable"
               type="text"
               onchange="gEditItemOverlay.onLocationFieldChange();"/>
-
+<hbox flex="1" class="zenEditBMPanel_fieldContainer">
   <label data-l10n-id="bookmark-overlay-location-2"
          class="editBMPanel_folderRow hideable"
          control="editBMPanel_folderMenuList"/>
@@ -51,6 +51,7 @@
             data-l10n-id="bookmark-overlay-folders-expander2"
             oncommand="gEditItemOverlay.toggleFolderTreeVisibility();"/>
   </hbox>
+</hbox>
 
   <vbox id="editBMPanel_folderTreeRow"
         class="hideable"

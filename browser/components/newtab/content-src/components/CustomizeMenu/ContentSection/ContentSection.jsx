@@ -179,7 +179,7 @@ export class ContentSection extends React.PureComponent {
                     data-l10n-args='{"num": 4}'
                   />
                 </select>
-                {mayHaveSponsoredTopSites && (
+                {false && (
                   <div className="check-wrapper" role="presentation">
                     <input
                       id="sponsored-shortcuts"

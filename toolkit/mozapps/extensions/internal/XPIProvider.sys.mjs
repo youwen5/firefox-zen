@@ -2534,7 +2534,7 @@ export var XPIProvider = {
         );
       }
       this.maybeInstallBuiltinAddon(
-        "default-theme@mozilla.org",
+        "firefox-compact-dark@mozilla.org",
         "1.3",
         "resource://default-theme/"
       );

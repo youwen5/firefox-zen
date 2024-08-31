@@ -213,7 +213,7 @@ function getBundleForLocales(newLocales) {
     ])
   );
   return new Localization(
-    ["browser/preferences/preferences.ftl", "branding/brand.ftl"],
+    ["browser/preferences/preferences.ftl", "branding/brand.ftl", "browser/preferences/zen-preferences.ftl"],
     false,
     undefined,
     locales

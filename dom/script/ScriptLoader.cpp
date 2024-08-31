@@ -2401,6 +2401,36 @@ void ScriptLoader::CalculateBytecodeCacheFlag(ScriptLoadRequest* aRequest) {
       hasFetchCountMin = false;
       break;
     }
+    case 1: {
+      // 1!
+      hasSourceLengthMin = true;
+      hasFetchCountMin = true;
+      sourceLengthMin = 1024;
+      // If we were to optimize only for speed, without considering the impact
+      // on memory, we should set this threshold to 2. (Bug 900784 comment 120)
+      fetchCountMin = 1;
+      break;
+    }
+    case 2: {
+      // 2!
+      hasSourceLengthMin = true;
+      hasFetchCountMin = true;
+      sourceLengthMin = 1024;
+      // If we were to optimize only for speed, without considering the impact
+      // on memory, we should set this threshold to 2. (Bug 900784 comment 120)
+      fetchCountMin = 2;
+      break;
+    }
+    case 3: {
+      // 3!
+      hasSourceLengthMin = true;
+      hasFetchCountMin = true;
+      sourceLengthMin = 1024;
+      // If we were to optimize only for speed, without considering the impact
+      // on memory, we should set this threshold to 2. (Bug 900784 comment 120)
+      fetchCountMin = 3;
+      break;
+    }
     default:
     case 0: {
       hasSourceLengthMin = true;

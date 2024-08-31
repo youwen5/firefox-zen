@@ -103,7 +103,7 @@ export var SelectParentHelper = {
     }
 
     menupopup.setAttribute("style", "");
-    menupopup.style.colorScheme = isDarkBackground ? "dark" : "light";
+    //menupopup.style.colorScheme = isDarkBackground ? "dark" : "light";
     menupopup.style.direction = selectStyle.direction;
 
     stylesheet = doc.createElementNS("http://www.w3.org/1999/xhtml", "style");

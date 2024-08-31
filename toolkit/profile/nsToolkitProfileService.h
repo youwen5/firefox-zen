@@ -30,7 +30,7 @@ class nsToolkitProfile final
   ~nsToolkitProfile() = default;
 
   nsToolkitProfile(const nsACString& aName, nsIFile* aRootDir,
-                   nsIFile* aLocalDir, bool aFromDB);
+                   nsIFile* aLocalDir, bool aFromDB, const nsACString& aZenAvatarPath);
 
   nsresult RemoveInternal(bool aRemoveFiles, bool aInBackground);
 
@@ -42,6 +42,7 @@ class nsToolkitProfile final
   nsIProfileLock* mLock;
   uint32_t mIndex;
   nsCString mSection;
+  nsCString mZenAvatarPath;
 };
 
 class nsToolkitProfileLock final : public nsIProfileLock {

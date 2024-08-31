@@ -44,3 +44,24 @@
     display: block;
   }
 }
+
+/**
+ * Zen overrides (try to avoid git conflicts as much as possible)
+ */
+
+.tab-preview-container {
+  --zen-border-color: #bdbcbc;
+  overflow: hidden;
+  border: 1px solid var(--zen-border-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  .tab-preview-container {
+    --zen-border-color: #565656;
+  }
+}
+
+.tab-preview-thumbnail-container img,
+.tab-preview-thumbnail-container canvas {
+  border-top: 1px solid var(--zen-border-color);
+}

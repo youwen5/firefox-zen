@@ -10,11 +10,11 @@
 #identity-popup,
 #permission-popup,
 #protections-popup {
-  --popup-width: 30.81em;
+  --popup-width: 28.81em;
   /* Set default fill for icons in the identity popup.
      Individual icons can override this. */
   fill: currentColor;
-  --horizontal-padding: calc(var(--arrowpanel-menuitem-padding-inline) * 2);
+  --horizontal-padding: 0;
   --vertical-section-padding: 0.9em;
   --height-offset: 0px;
   font: menu;

@@ -666,6 +666,20 @@ if (!Services.prefs.getBoolPref("browser.pagedata.enabled", false)) {
   };
 }
 
+JSWINDOWACTORS.ZenThemeMarketplace = {
+  parent: {
+    esModuleURI: "chrome://browser/content/zen-components/actors/ZenThemeMarketplaceParent.sys.mjs",
+  },
+  child: {
+    esModuleURI: "chrome://browser/content/zen-components/actors/ZenThemeMarketplaceChild.sys.mjs",
+    events: {
+      DOMContentLoaded: {},
+    },
+  },
+  matches: ["https://*.zen-browser.app/*", "about:preferences"],
+  allFrames: true,
+};
+
 if (AppConstants.platform != "android") {
   // Note that GeckoView has another implementation in mobile/android/actors.
   JSWINDOWACTORS.Select = {

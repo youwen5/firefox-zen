@@ -137,7 +137,7 @@ const KEY_APP_GLOBAL = "app-global";
 const KEY_APP_PROFILE = "app-profile";
 const KEY_APP_TEMPORARY = "app-temporary";
 
-const DEFAULT_THEME_ID = "default-theme@mozilla.org";
+const DEFAULT_THEME_ID = "firefox-compact-dark@mozilla.org";
 
 // Properties to cache and reload when an addon installation is pending
 const PENDING_INSTALL_METADATA = [
@@ -214,7 +214,7 @@ const SIGNED_TYPES = new Set(["extension", "locale", "theme"]);
 // Time to wait before async save of XPI JSON database, in milliseconds
 const ASYNC_SAVE_DELAY_MS = 20;
 
-const l10n = new Localization(["browser/appExtensionFields.ftl"], true);
+const l10n = new Localization(["browser/appExtensionFields.ftl", "browser/zenAppExtensionFields.ftl"], true);
 
 /**
  * Schedules an idle task, and returns a promise which resolves to an

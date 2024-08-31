@@ -65,8 +65,9 @@
 }
 
 #identity-box[pageproxystate="valid"]:is(.notSecureText, .chromeUI, .extensionPage) > .identity-box-button,
+#identity-box[pageproxystate="valid"] > .identity-box-button,
 #urlbar-label-box {
-  background-color: var(--urlbar-box-bgcolor);
+  background-color: light-dark(#cecece, rgb(66, 65, 77));
   color: var(--urlbar-box-text-color);
   padding-inline: 8px;
   border-radius: var(--urlbar-icon-border-radius);
@@ -155,11 +156,11 @@
 }
 
 #identity-box[pageproxystate="invalid"] #identity-icon {
-  list-style-image: url(chrome://global/skin/icons/search-glass.svg);
+  list-style-image: url(chrome://global/skin/icons/search-glass.svg) !important;
 }
 
 #urlbar[actiontype="extension"] > .urlbar-input-container > #identity-box #identity-icon {
-  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg);
+  list-style-image: url(chrome://mozapps/skin/extensions/extension.svg) !important;
 }
 
 #identity-box[pageproxystate="valid"].extensionPage #identity-icon {

@@ -196,6 +196,10 @@ function init_all() {
   // the entire document.
   Preferences.queueUpdateOfAllElements();
   Services.telemetry.setEventRecordingEnabled("aboutpreferences", true);
+  register_module("paneZenLooks", gZenLooksAndFeel);
+  register_module("paneZenWorkspaces", gZenWorkspacesSettings);
+  register_module("paneZenCKS", gZenCKSSettings);
+  register_module("paneZenMarketplace", gZenMarketplaceManager);
 
   register_module("paneGeneral", gMainPane);
   register_module("paneHome", gHomePane);

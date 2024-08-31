@@ -96,4 +96,9 @@ interface nsIToolkitProfile : nsISupports
      * @throws NS_ERROR_FILE_ACCESS_DENIED if the profile was already locked.
      */
     nsIProfileLock lock(out nsIProfileUnlocker aUnlocker);
+
+    /**
+     * Zen Avatar Path
+     */
+    attribute AUTF8String zenAvatarPath;
 };

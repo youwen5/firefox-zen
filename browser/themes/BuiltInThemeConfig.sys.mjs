@@ -22,22 +22,29 @@ export const BuiltInThemeConfig = new Map([
   [
     "firefox-compact-light@mozilla.org",
     {
-      version: "1.2",
+      version: "1.3",
       path: "resource://builtin-themes/light/",
     },
   ],
   [
     "firefox-compact-dark@mozilla.org",
     {
-      version: "1.2",
+      version: "1.3",
       path: "resource://builtin-themes/dark/",
     },
   ],
   [
-    "firefox-alpenglow@mozilla.org",
+    "firefox-compact-galaxy@mozilla.org",
     {
-      version: "1.4",
-      path: "resource://builtin-themes/alpenglow/",
+      version: "1.3",
+      path: "resource://builtin-themes/galaxy/",
+    },
+  ],
+  [
+    "firefox-compact-dream@mozilla.org",
+    {
+      version: "1.3",
+      path: "resource://builtin-themes/dream/",
     },
   ],
   [

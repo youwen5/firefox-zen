@@ -826,7 +826,7 @@ var gIdentityHandler = {
       // This is a secure internal Firefox page.
       this._identityBox.className = "chromeUI";
       let brandBundle = document.getElementById("bundle_brand");
-      icon_label = brandBundle.getString("brandShorterName");
+      icon_label = brandBundle.getString("brandShortName");
     } else if (this._pageExtensionPolicy) {
       // This is a WebExtension page.
       this._identityBox.className = "extensionPage";
@@ -1142,6 +1142,12 @@ var gIdentityHandler = {
         // Country only
         supplemental += iData.country;
       }
+    }
+
+    if (connection == "chrome" || connection == "extension" || connection == "file") {
+      document.getElementById("identity-popup-mainView-panel-header").setAttribute("hidden", "true");
+    } else {
+      document.getElementById("identity-popup-mainView-panel-header").removeAttribute("hidden");
     }
 
     // Push the appropriate strings out to the UI.

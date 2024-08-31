@@ -103,3 +103,6 @@ browser.jar:
 
 # L10n resources and overrides.
 % override chrome://global/locale/appstrings.properties chrome://browser/locale/appstrings.properties
+
+#include content/zen-avatars/jar.inc.mn
+#include content/zen-assets.jar.inc.mn

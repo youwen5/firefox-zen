@@ -31,7 +31,7 @@ const toolkitVariableMap = [
       lwtProperty: "accentcolor",
       processColor(rgbaChannels) {
         if (!rgbaChannels || rgbaChannels.a == 0) {
-          return "white";
+          return "var(--zen-colors-primary)";
         }
         // Remove the alpha channel
         const { r, g, b } = rgbaChannels;
@@ -327,6 +327,7 @@ LightweightThemeConsumer.prototype = {
       theme.additionalBackgrounds
     );
     let _processedColors = _setProperties(root, hasTheme, theme);
+    this._zenSetAccentColor(root);
 
     if (hasTheme) {
       if (updateGlobalThemeData) {
@@ -418,6 +419,14 @@ LightweightThemeConsumer.prototype = {
       this._doc.insertBefore(stylesheet, root);
       this._lastExperimentData.stylesheet = stylesheet;
     }
+  },
+
+  _zenSetAccentColor(root) {
+    const themeAccent = Services.prefs.getStringPref(
+      "zen.theme.accent-color",
+      "#0b57d0"
+    );
+    root.style.setProperty("--zen-primary-color", themeAccent);
   },
 };
 

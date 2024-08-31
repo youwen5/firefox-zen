@@ -23,3 +23,5 @@ browser.jar:
    content/browser/preferences/more-from-mozilla-qr-code-simple-cn.svg
    content/browser/preferences/web-appearance-dark.svg
    content/browser/preferences/web-appearance-light.svg
+
+   content/browser/preferences/zen-settings.js

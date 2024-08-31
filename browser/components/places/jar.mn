@@ -26,3 +26,5 @@ browser.jar:
     content/browser/places/interactionsViewer.html       (metadataViewer/interactionsViewer.html)
     content/browser/places/interactionsViewer.js         (metadataViewer/interactionsViewer.js)
 #endif
+    content/browser/places/zenNewWebPanel.xhtml      (content/zenNewWebPanel.xhtml)
+    content/browser/places/zenNewWebPanel.js         (content/zenNewWebPanel.js)

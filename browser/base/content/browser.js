@@ -629,6 +629,15 @@ XPCOMUtils.defineLazyPreferenceGetter(
   false
 );
 
+const ZEN_WELCOME_PATH = "zen-welcome";
+const ZEN_WELCOME_ELEMENT_ATTR = "zen-dialog-welcome-element";
+XPCOMUtils.defineLazyServiceGetter(
+  this,
+  "ProfileService",
+  "@mozilla.org/toolkit/profile-service;1",
+  "nsIToolkitProfileService"
+);
+
 customElements.setElementCreationCallback("screenshots-buttons", () => {
   Services.scriptloader.loadSubScript(
     "chrome://browser/content/screenshots/screenshots-buttons.js",
@@ -3686,6 +3695,9 @@ var XULBrowserWindow = {
     AboutReaderParent.updateReaderButton(gBrowser.selectedBrowser);
     TranslationsParent.onLocationChange(gBrowser.selectedBrowser);
 
+    gZenViewSplitter.onLocationChange(gBrowser.selectedBrowser);
+    ZenWorkspaces.onLocationChange(gBrowser.selectedBrowser);
+
     PictureInPicture.updateUrlbarToggle(gBrowser.selectedBrowser);
 
     if (!gMultiProcessBrowser) {
@@ -5007,7 +5019,7 @@ function setToolbarVisibility(
       );
     }
 
-    const overlapAttr = "BookmarksToolbarOverlapsBrowser";
+    const overlapAttr = "BookmarksToolbarOverlapsBrowser__ignore"; // Original string was "BookmarksToolbarOverlapsBrowser" but it's not used and it only bugs the UI.
     switch (isVisible) {
       case true:
       case "always":
@@ -7844,6 +7856,12 @@ var gDialogBox = {
     // required for SubDialog to work.
     parentElement.showModal();
     this._didOpenHTMLDialog = true;
+
+    if (uri.includes(ZEN_WELCOME_PATH)) {
+      parentElement.setAttribute(ZEN_WELCOME_ELEMENT_ATTR, true);
+    } else if (parentElement.hasAttribute(ZEN_WELCOME_ELEMENT_ATTR)) {
+      parentElement.removeAttribute(ZEN_WELCOME_ELEMENT_ATTR);
+    }
 
     // Disable menus and shortcuts.
     this._updateMenuAndCommandState(false /* to disable */);
